@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="722.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+   <top>
+      <AnchorPane prefHeight="35.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="14.0">
+               <image>
+                  <Image url="@../../../../../../../Downloads/fitSyncLogo.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="61.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FitSync">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.062745101749897" green="0.686274528503418" blue="0.8196078538894653" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.45098039507865906" green="0.7843137383460999" blue="0.6705882549285889" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <HBox alignment="TOP_CENTER" layoutY="38.0" prefHeight="30.0" prefWidth="722.0" spacing="10.0" style="-fx-background-color: #209fba;">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnDashBoard" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: #73c8ab;" text="Dashboard" textFill="#fffcfc" />
+                  <Button mnemonicParsing="false" onAction="#btnProfile" prefHeight="28.0" prefWidth="68.0" style="-fx-background-color: #209fba;" text="Profile" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#btnWorkout" prefHeight="28.0" prefWidth="68.0" style="-fx-background-color: #209fba;" text="Workout" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#btnNutrition" prefHeight="28.0" prefWidth="68.0" style="-fx-background-color: #209fba;" text="Nutrition" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="38.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="29.0" fitWidth="722.0" layoutY="14.0">
+               <image>
+                  <Image url="@../../../../../../../Downloads/footer.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="379.0" prefWidth="422.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" layoutX="29.0" layoutY="24.0" prefHeight="588.0" prefWidth="663.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <HBox alignment="TOP_CENTER" prefHeight="85.0" prefWidth="672.0" spacing="16.0">
+                     <children>
+                        <VBox prefHeight="90.0" prefWidth="126.0" style="-fx-border-color: #7b7b7b;">
+                           <children>
+                              <Label alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="TOP" prefHeight="36.0" prefWidth="124.0" text="Current Weight">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="126.0" text="60 kg" VBox.vgrow="NEVER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="15.0" prefWidth="126.0" text="-2.5kg this week" textFill="#209fba">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="90.0" prefWidth="126.0" style="-fx-border-color: #7b7b7b;">
+                           <children>
+                              <Label alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="TOP" prefHeight="36.0" prefWidth="124.0" text="Workout Streak">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="126.0" text="12 days" VBox.vgrow="NEVER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="15.0" prefWidth="126.0" text="Personal Best: 21 days" textFill="#209fba">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="90.0" prefWidth="126.0" style="-fx-border-color: #7b7b7b;">
+                           <children>
+                              <Label alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="TOP" prefHeight="36.0" prefWidth="124.0" text="Weekly Workouts">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="126.0" text="4/5" VBox.vgrow="NEVER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="15.0" prefWidth="126.0" text="1 more to reach your goal" textFill="#209fba">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="90.0" prefWidth="126.0" style="-fx-border-color: #7b7b7b;">
+                           <children>
+                              <Label alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="TOP" prefHeight="36.0" prefWidth="124.0" text="Goal Progress">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="126.0" text="60 kg" VBox.vgrow="NEVER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="15.0" prefWidth="126.0" text="Weight Goal: 50 kg" textFill="#209fba">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="198.0" prefWidth="672.0" spacing="20.0" style="-fx-border-color: \\#7b7b7b;">
+                     <children>
+                        <VBox layoutX="20.0" prefHeight="198.0" prefWidth="227.0" style="-fx-border-color: #7b7b7b;">
+                           <children>
+                              <HBox alignment="BASELINE_CENTER" prefHeight="43.0" prefWidth="236.0" spacing="20.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="157.0" text="Today's Workout">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="18.0" prefWidth="94.0" text="See all" textFill="#209fba">
+                                       <padding>
+                                          <Insets top="15.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <Line endX="66.69288635253906" scaleZ="0.0" startX="-100.0" stroke="#999595" translateX="20.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <rotationAxis>
+                                    <Point3D />
+                                 </rotationAxis>
+                              </Line>
+                              <HBox prefHeight="60.0" prefWidth="236.0">
+                                 <children>
+                                    <VBox prefHeight="35.0" prefWidth="171.0">
+                                       <children>
+                                          <Label text="Upper Body Strength">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="15.0" top="15.0" />
+                                             </padding>
+                                          </Label>
+                                          <HBox prefHeight="21.0" prefWidth="171.0" spacing="15.0">
+                                             <children>
+                                                <Label text="45 mins" textFill="#9c9c9c">
+                                                   <padding>
+                                                      <Insets left="15.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label text="320 cals" textFill="#9c9c9c" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <Button mnemonicParsing="false" onAction="#btnStart" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #209fba;" text="Start" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets right="10.0" top="18.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Line endX="66.69288635253906" startX="-100.0" stroke="#999595">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                                 <rotationAxis>
+                                    <Point3D />
+                                 </rotationAxis>
+                              </Line>
+                              <HBox prefHeight="60.0" prefWidth="236.0">
+                                 <children>
+                                    <VBox prefHeight="35.0" prefWidth="171.0">
+                                       <children>
+                                          <Label text="Upper Body Strength">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="15.0" top="15.0" />
+                                             </padding>
+                                          </Label>
+                                          <HBox prefHeight="21.0" prefWidth="171.0" spacing="15.0">
+                                             <children>
+                                                <Label text="45 mins" textFill="#9c9c9c">
+                                                   <padding>
+                                                      <Insets left="15.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label text="320 cals" textFill="#9c9c9c" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <Button mnemonicParsing="false" onAction="#btnStart" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #209fba;" text="Start" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets right="10.0" top="18.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="198.0" prefWidth="400.0" style="-fx-border-color: #7b7b7b;">
+                           <children>
+                              <HBox alignment="BASELINE_CENTER" prefHeight="43.0" prefWidth="236.0" spacing="100.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="157.0" text="Today's Nutrition">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="18.0" prefWidth="94.0" text="See all" textFill="#209fba">
+                                       <padding>
+                                          <Insets top="15.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <Line endX="250.0" scaleZ="0.0" startX="-100.0" stroke="#999595" translateX="20.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <rotationAxis>
+                                    <Point3D />
+                                 </rotationAxis>
+                              </Line>
+                              <HBox prefHeight="151.0" prefWidth="398.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <ProgressIndicator prefHeight="104.0" prefWidth="90.0" progress="0.75" scaleX="2.0" scaleY="2.0" scaleZ="2.0">
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </ProgressIndicator>
+                                          <Label prefHeight="18.0" prefWidth="46.0" text="Calories">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label text="1500/2000" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <ProgressIndicator prefHeight="104.0" prefWidth="90.0" progress="0.4" scaleX="2.0" scaleY="2.0" scaleZ="2.0">
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </ProgressIndicator>
+                                          <Label prefHeight="18.0" prefWidth="46.0" text="Protein">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label text="60g/ 150g" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <ProgressIndicator prefHeight="104.0" prefWidth="90.0" progress="0.6" scaleX="2.0" scaleY="2.0" scaleZ="2.0">
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </ProgressIndicator>
+                                          <Label prefHeight="18.0" prefWidth="34.0" text="Carbs">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label text="120g/ 200g" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <ProgressIndicator prefHeight="104.0" prefWidth="90.0" progress="0.5" scaleX="2.0" scaleY="2.0" scaleZ="2.0">
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </ProgressIndicator>
+                                          <Label prefHeight="18.0" prefWidth="18.0" text="Fat">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label text="25g/ 50g" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="202.0" prefWidth="583.0" style="-fx-border-color: #7b7b7b;">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="214.0" prefWidth="634.0">
+                           <children>
+                              <HBox alignment="BASELINE_CENTER" prefHeight="43.0" prefWidth="578.0" spacing="200.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="157.0" text="Weight Progress">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="18.0" prefWidth="94.0" text="See all" textFill="#209fba">
+                                       <padding>
+                                          <Insets top="15.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Line endX="500.0" startX="-100.0" stroke="#999595">
+                                 <VBox.margin>
+                                    <Insets left="25.0" />
+                                 </VBox.margin>
+                              </Line>
+                              <LineChart prefHeight="150.0" prefWidth="562.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
